@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* การตั้งค่าพื้นหลังและจัดวางเนื้อหา */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(to bottom, #f2f7ff, #dce5ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      /* การตกแต่งกรอบแผนที่ */
+      .map-container {
+        background-color: #ffffff; /* พื้นหลังสีขาว */
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* การตกแต่งหัวข้อแผนที่ */
+      h5 {
+        font-size: 28px;
+        text-align: center;
+        font-weight: bold;
+        color: #334;
+        margin-bottom: 20px;
+      }
+
+      /* การจัดตำแหน่ง iframe */
+      iframe {
+        border-radius: 8px;
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="map-container">
+      <h5><i class="fas fa-map-marker-alt"></i> Map</h5>
+      <iframe
+        src="https://qgiscloud.com/Warisara/landmark/"
+        title="Landmark Map"
+      ></iframe>
+    </div>
+  </body>
+</html>

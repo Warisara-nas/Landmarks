@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Geo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #a8e6cf 30%, #dcedc1 70%);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .chart-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .chart-box {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .description-box {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        text-align: center;
+      }
+
+      .description-box {
+        width: 1200px;
+        max-width: 100%;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box; /* Ensures padding doesn't add to width */
+      }
+
+      .description-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .description-box li {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .star {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="text-align: center; margin: 20px 0">
+      <h2 class="heading">Let's Connect in Paradise</h2>
+      <p class="description">
+        Discover the stunning shores of Phuket and its hidden gems. Got
+        questions or just want to say hello? Drop us a message – we're here to
+        bring Phuket closer to you!
+      </p>
+    </div>
+
+    <div class="chart-container">
+      <!-- Section for Donut Chart -->
+      <div class="chart-box">
+        <h2>Doughnut Chart</h2>
+        <canvas id="donutChart" width="300" height="300"></canvas>
+      </div>
+          <!-- Section for Place Descriptions -->
+    <div class="description-box">
+        <h3>แหล่งท่องเที่ยวที่แนะนำในภูเก็ต</h3>
+        <ul>
+          <li>
+            <span class="star" style="color: #ff6384">&#9733;</span>
+            <strong>เมืองเก่าภูเก็ต:</strong>
+            ย่านเมืองเก่าภูเก็ตโดดเด่นด้วยสถาปัตยกรรมชิโน-โปรตุกีสอันเก่าแก่ที่สะท้อนถึงวัฒนธรรมอันหลากหลายของชุมชนที่อยู่ร่วมกันมาหลายร้อยปี
+            ที่นี่มีบ้านโบราณ ตึกแถว และร้านคาเฟ่ที่มีเอกลักษณ์เฉพาะตัว
+            พร้อมทั้งร้านอาหารและตลาดที่แสดงถึงเสน่ห์ของภูเก็ตในอดีต
+            นอกจากนี้ยังเป็นจุดที่น่าสนใจในการเดินเล่นถ่ายรูปและสำรวจประวัติศาสตร์เมือง
+          </li>
+          <li>
+            <span class="star" style="color: #36a2eb">&#9733;</span>
+            <strong>หาดป่าตอง:</strong>
+            หาดป่าตองเป็นหาดทรายขาวที่มีชื่อเสียงระดับโลก
+            เป็นที่รู้จักกันดีในด้านความสวยงามของทะเลสีฟ้าใสที่สามารถมองเห็นได้ไกล
+            รวมถึงกิจกรรมชายหาดที่มีมากมาย ไม่ว่าจะเป็นการเล่นน้ำ ดำน้ำ ดูปะการัง
+            นอกจากนี้หาดป่าตองยังมีบรรยากาศของการท่องเที่ยวกลางคืนที่ครึกครื้นด้วยบาร์และร้านอาหารที่หลากหลายตลอดถนนสายบางลา
+          </li>
+          <li>
+            <span class="star" style="color: #ffcd56">&#9733;</span>
+            <strong>วัดฉลอง:</strong>
+            วัดฉลองเป็นวัดที่ใหญ่และมีชื่อเสียงมากที่สุดในภูเก็ต
+            ซึ่งเป็นสถานที่ที่นักท่องเที่ยวมักแวะมาเคารพบูชาและขอพร
+            วัดนี้มีความสำคัญทางประวัติศาสตร์และเป็นที่ตั้งของพระบรมสารีริกธาตุที่นับถือกันว่าเป็นศักดิ์สิทธิ์
+            ภายในวัดตกแต่งด้วยงานศิลปะไทยที่สวยงามและมีพระเจดีย์สูงที่สามารถมองเห็นวิวทิวทัศน์รอบเมือง
+          </li>
+          <li>
+            <span class="star" style="color: #4bc0c0">&#9733;</span>
+            <strong>แหลมพรหมเทพ:</strong>
+            จุดชมวิวที่โด่งดังที่สุดในภูเก็ต
+            แหลมพรหมเทพเป็นสถานที่ที่นักท่องเที่ยวนิยมมาชมพระอาทิตย์ตกดิน
+            เนื่องจากวิวทะเลที่งดงามที่มองเห็นออกไปไกลสุดสายตา
+            จากจุดนี้สามารถเห็นทั้งแนวชายฝั่ง ท้องฟ้ากว้างไกล
+            และทะเลอันดามันที่มีสีสันงดงาม
+            นอกจากนี้ที่นี่ยังมีประภาคารเก่าแก่ที่เป็นสัญลักษณ์ของพื้นที่แห่งนี้ด้วย
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section for Tourist Statistics Line Chart -->
+      <div class="chart-box">
+        <h2>Tourist Data (Phuket)</h2>
+        <canvas id="lineChart" width="300" height="300"></canvas>
+      </div>
+    </div>
+
+    <script src="/frontend/script.js"></script>
+    <script>
+      // Donut Chart Configuration
+      const ctxDonut = document.getElementById("donutChart").getContext("2d");
+      const donutChart = new Chart(ctxDonut, {
+        type: "doughnut",
+        data: {
+          labels: ["Department store", "School", "Temple", "University"],
+          datasets: [
+            {
+              label: "",
+              data: [15, 45, 35, 5],
+              backgroundColor: ["#ff6384", "#36a2eb", "#ffcd56", "#4bc0c0"],
+              hoverOffset: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: "top",
+            },
+          },
+        },
+      });
+
+      // Line Chart Configuration for Tourist Data
+      // Line Chart Configuration for Tourist Data
+      const ctxLine = document.getElementById("lineChart").getContext("2d");
+      const lineChart = new Chart(ctxLine, {
+        type: "line",
+        data: {
+          labels: [
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+          ],
+          datasets: [
+            {
+              label: "Tourist Arrivals (in Millions)",
+              data: [12, 13, 13.8, 14.5, 15, 14, 4, 0.5, 9, 14],
+              borderColor: "#4bc0c0",
+              backgroundColor: "rgba(75, 192, 192, 0.2)",
+              borderWidth: 2,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: "top",
+            },
+            tooltip: {
+              mode: "index",
+              intersect: false,
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Year",
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Tourist Arrivals (Millions)",
+              },
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+  <!-- New Description Box -->
+   
+<div class="description-box">
+  <div class="tourism-info">
+    <h3>ข้อมูลการท่องเที่ยวเพิ่มเติม</h3>
+    <p>ข้อมูลที่แสดงในเส้นกราฟ:</p>
+    
+    <ul>
+      <li><strong>แกน X (ปี):</strong> แกนนี้แสดงปี ตั้งแต่ 2014 ถึง 2023 ซึ่งเป็นช่วงเวลาที่ใช้ในการวิเคราะห์ข้อมูลการท่องเที่ยว</li>
+      <li><strong>แกน Y (จำนวนผู้เข้าชม):</strong> แกนนี้แสดงจำนวนผู้เข้าชมที่มีหน่วยเป็นล้านคน ซึ่งแสดงจำนวนผู้เข้าชมในแต่ละปี</li>
+    </ul>
+
+    <h3>วิเคราะห์กราฟ</h3>
+    <ol>
+      <li><strong>การเติบโตในช่วงปี 2014-2019:</strong> จำนวนผู้เข้าชมเพิ่มขึ้นอย่างต่อเนื่อง โดยเฉพาะในปี 2018 ที่มีจำนวนสูงสุดอยู่ที่ 15 ล้านคน ซึ่งแสดงให้เห็นถึงความนิยมของภูเก็ตในฐานะจุดหมายปลายทางการท่องเที่ยวที่สำคัญ</li>
+      <li><strong>การลดลงในปี 2020:</strong> ในปี 2020 มีการลดลงอย่างรุนแรงเนื่องจากผลกระทบของการระบาดของ COVID-19 ส่งผลให้จำนวนผู้เข้าชมลดลงเหลือเพียง 4 ล้านคน</li>
+      <li><strong>การฟื้นตัวในปี 2021-2023:</strong> แม้ว่าจำนวนผู้เข้าชมจะต่ำมากในปี 2021 (0.5 ล้านคน) แต่ในปี 2022 มีการฟื้นตัวที่ดีขึ้นที่ 9 ล้านคน และต่อมาในปี 2023 จำนวนผู้เข้าชมกลับมาอยู่ที่ 14 ล้านคน ซึ่งแสดงให้เห็นถึงการกลับมาของนักท่องเที่ยวและความพยายามในการฟื้นฟูการท่องเที่ยวในภูเก็ต</li>
+    </ol>
+</div>
+<html>
+  
+
+  
