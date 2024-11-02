@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Phuket</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e0f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styling */
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+input[type=submit] {
+  background-color: #00897b;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type=submit]:hover {
+  background-color: #004d40;
+}
+
+.container {
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Columns */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+/* Clearfix */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Centered heading and description */
+.container .heading {
+  text-align: center;
+  color: #00695c;
+  font-size: 26px;
+}
+
+.container .description {
+  text-align: center;
+  color: #00796b;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal content */
+.modal-content {
+  position: relative;
+  margin: 15% auto;
+  padding: 20px;
+  background-color: #fff;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Success icon */
+.modal-content .check-icon {
+  font-size: 50px;
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  color: #333;
+  margin: 0;
+}
+
+.modal-content p {
+  color: #555;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div style="text-align: center; margin: 50px 0;">
+    <h2 class="heading">Contect Us - Landmark Project</h2>
+    <p class="description">
+        We hope you guy enjoy your trip, If you have any questions or need help, please send message to let we know!!!. created by Warisara A.
+    </p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+
+      <!-- เปลี่ยนรูปตรงนี้ -->
+       <!-- วิธีการเปลี่ยน -->
+        <!-- 1. ไปหารูปที่ต้องการ -->
+        <!-- 2. คลิ๊กขวาที่รูปแล้วเลือก Copy Address หรีือ คัดลอกที่อยู่ -->
+        <!-- 3. นำมาวางใน src --> 
+      <img src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/464377261_1039249771328158_7886291189291272586_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=tKciTG9sVRkQ7kNvgGiyD-9&_nc_zt=23&_nc_ht=scontent.fbkk5-7.fna&_nc_gid=A3oFHl8b3QQTmnVQl4RM2fl&oh=00_AYBbzqjRyqcolr2tkeAFFWBi2C5WcSTOGMGF2UkOIfQi2Q&oe=672991AD" alt="Phuket Beach" style="width:100%; border-radius: 8px;">
+    </div>
+    <div class="column">
+      <form id="contactForm">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="thailand">Thailand</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="uk">UK</option>
+        </select>
+
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Share your Phuket experience or ask us anything..." style="height:170px" required></textarea>
+        
+        <input type="submit" value="Send Message">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <div class="check-icon">&#10003;</div>
+    <h3>Your message has been sent!</h3>
+    <p>Thank you for reaching out to us.</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  document.getElementById('successModal').style.display = 'block';
+
+  setTimeout(() => {
+    document.getElementById('successModal').style.display = 'none';
+  }, 3000);
+});
+</script>
+
+</body>
+</html>
